@@ -1,0 +1,34 @@
+{
+  "name": "safevoice-pk-backend",
+  "version": "1.0.0",
+  "description": "SafeVoice PK API: accounts with email OTP, encrypted evidence vault, legal intake and mapping, lawyer representation, vakalatnama, messaging, tracking, admin and AI assistant",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node scripts/migrate.js && node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "selftest": "node scripts/selftest.js",
+    "smoke": "node scripts/smoke.js",
+    "seed": "node scripts/seed.js",
+    "create-admin": "node scripts/create-admin.js",
+    "start:server": "node src/server.js",
+    "test-mail": "node scripts/test-mail.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "express-rate-limit": "7.4.0",
+    "helmet": "7.1.0",
+    "jsonwebtoken": "9.0.2",
+    "multer": "1.4.5-lts.1",
+    "pg": "8.12.0",
+    "nodemailer": "6.9.14",
+    "docx": "9.8.1",
+    "pdf-lib": "1.17.1"
+  }
+}
