@@ -1,0 +1,43 @@
+# One-click setup on Render (https://render.com): New > Blueprint > pick this repository.
+# The database is NOT created here: use any PostgreSQL (Neon free tier works well) and paste its connection string.
+services:
+  - type: web
+    name: safevoice-pk
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MASTER_KEY
+        generateValue: true
+      - key: STORAGE_DRIVER
+        value: db
+      - key: TRUST_PROXY
+        value: "true"
+      - key: DEV_SHOW_OTP
+        value: "false"
+      - key: APP_URL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_SECURE
+        value: "true"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
