@@ -27,7 +27,7 @@ const { validatePassword, isEmail } = require('../src/validators');
       }
     }
   } catch (e) {
-    console.error('Migration failed:', e.message);
+    console.error('Migration failed:', e);
     process.exitCode = 1;
   } finally {
     await pool.end();
